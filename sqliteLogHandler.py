@@ -17,6 +17,9 @@ Example:
 
     # Give it a file name, In this case, I'm using the name, log.sqlite.
     sql_handler = SQLiteLogger("log.sqlite")
+    
+    # Add handler to logger.
+    logger.addHandler(sql_handler)
 
     # Get the minimum threshold for what you want to capture. DEBUG will capture it all
     logger.setLevel(logging.DEBUG)
