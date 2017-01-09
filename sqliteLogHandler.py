@@ -50,7 +50,7 @@ class SQLiteLogger(logging.Handler):
         super().__init__(level)
 
         self.filename = filename
-        self._db = sqlite3.connect(self.filename)
+        self._db = sqlite3.connect(self.filename, isolation_level=None)
         self._db.executescript(CREATE_COMMAND)
 
         try:
